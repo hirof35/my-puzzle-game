@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# TypeScript ピタッとパズル
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TypeScript + React + Canvas で作成した、ピースを正しい位置にドラッグしてはめるパズルゲームです。
 
-Currently, two official plugins are available:
+## 特徴
+- **スナップ機能**: ピースが正解の位置に近づくと「ピタッ」と吸い付きます。
+- **シャッフル演出**: 開始時にピースが中央からランダムに弾け飛びます。
+- **難易度選択**: 3段階（EASY, NORMAL, HARD）の難易度設定。
+- **カスタム画像**: 自分の好きな画像をアップロードしてパズルにできます。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 使い方
+1. `npm install` で依存関係をインストール
+2. `npm run dev` でローカルサーバーを起動
+3. ブラウザで画像を選択し、「Start Game」をクリック！
 
-## React Compiler
+## 技術スタック
+- React
+- TypeScript
+- HTML5 Canvas API
+- Vite
+3. GitHubへのアップロード（コマンド例）
+GitHubで新しいリポジトリ（Repository）を作成した後、CMDで以下のコマンドを順番に打ちます。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+DOS
+# Gitの初期化
+git init
 
-## Expanding the ESLint configuration
+# 全ファイルをステージング（追加）
+git add .
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# コミット（記録）
+git commit -m "Initial commit: ピタッとパズル完成版"
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# リポジトリの紐付け（GitHub上のURLに書き換えてください）
+git remote add origin https://github.com/あなたのユーザー名/リポジトリ名.git
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# メインブランチ名の設定
+git branch -M main
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# アップロード
+git push -u origin main
+4. GitHub Pages でゲームを公開する（おまけ）
+GitHubには、アップロードしたソースコードをそのまま「ウェブサイト」として公開できる GitHub Pages という機能があります。
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+npm run build を実行して dist フォルダを作る。
+![Uploading スクリーンショット 2026-05-02 180826.png…]()
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Viteの vite.config.ts に base: './' を追加する。
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+gh-pages パッケージなどを使ってデプロイする。
