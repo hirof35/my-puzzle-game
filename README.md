@@ -1,7 +1,8 @@
+
 # TypeScript ピタッとパズル
 
 TypeScript + React + Canvas で作成した、ピースを正しい位置にドラッグしてはめるパズルゲームです。
-
+<img width="1914" height="959" alt="スクリーンショット 2026-05-02 180826" src="https://github.com/user-attachments/assets/383b76a9-23f9-43ab-91ae-25fc52865777" />
 ## 特徴
 - **スナップ機能**: ピースが正解の位置に近づくと「ピタッ」と吸い付きます。
 - **シャッフル演出**: 開始時にピースが中央からランダムに弾け飛びます。
@@ -43,7 +44,6 @@ git push -u origin main
 GitHubには、アップロードしたソースコードをそのまま「ウェブサイト」として公開できる GitHub Pages という機能があります。
 
 npm run build を実行して dist フォルダを作る。
-![Uploading スクリーンショット 2026-05-02 180826.png…]()
 
 Viteの vite.config.ts に base: './' を追加する。
 
